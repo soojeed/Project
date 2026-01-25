@@ -4,7 +4,7 @@ import section from '../../components/Home/section'
 
 const Home = () => {
   return (
-    <div className='bg-repeat bg-cover min-h-screen' style={{backgroundImage: "url('https://cdn.dribbble.com/userupload/6508147/file/original-11794da09cf2fda821918b0be52877cf.jpg?format=webp&resize=400x300&vertical=center')"}}>
+    <div className='bg-[#0C2C55] h-screen rounded-b-2xl mb-20 shadow-neutral-950  '>
         {navbar()}
 
         <div>
