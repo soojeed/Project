@@ -4,10 +4,10 @@ const ROLE = prisma;
 
 export interface IRegister{
     email: string;
-    password: string;
-    phone_number: string;
+    password: string; 
     fullname: string;
-    password_confirm?: string;
+    password_confirm: string;
+    phone_number: string;
 
 }
 
