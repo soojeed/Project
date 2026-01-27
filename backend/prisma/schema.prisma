@@ -17,14 +17,80 @@ enum ROLE {
   MODERATOR
 }
 
+enum SkillLevel {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+}
+
+enum SkillCategory {
+  FRONTEND
+  BACKEND
+  TOOLS
+}
+
 model users {
   id           Int        @id @default(autoincrement())
   email        String     @unique
   password     String
   fullname     String
-  phone_number String
+  phone_number String?
   created_at   DateTime   @default(now())
   updated_at   DateTime   @updatedAt
   last_login   DateTime?
   role         ROLE       @default(USER)
+}
+
+
+model Profile {
+  id        Int    @id @default(autoincrement())
+  fullName  String
+  title     String
+  bio       String?
+  image     String?
+  cvUrl     String?
+}
+
+model Skill {
+  id       Int    @id @default(autoincrement())
+  name     String
+  level    SkillLevel 
+  image    String? 
+  category SkillCategory   
+}
+
+model Project {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  image       String?
+  githubUrl   String?
+  liveUrl     String?
+  techStack   String?
+  createdAt   DateTime @default(now())
+}
+
+model Experience {
+  id          Int      @id @default(autoincrement())
+  company     String
+  position    String
+  startDate   DateTime
+  endDate     DateTime?
+  description String
+}
+
+model Education {
+  id          Int    @id @default(autoincrement())
+  institution String
+  degree      String
+  startYear   Int
+  endYear     Int?
+}
+
+model ContactMessage {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
 }

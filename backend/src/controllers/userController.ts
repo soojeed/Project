@@ -68,6 +68,7 @@ export const getAllUsers = async (req: Request, res: Response) => {
       fullname: true,
       email: true,
       phone_number: true,
+      last_login: true,
       created_at: true,
       updated_at: true,
 
