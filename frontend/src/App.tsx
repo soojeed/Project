@@ -1,14 +1,14 @@
-import React from 'react'
-import Home from './pages/home/home'
-import Blog from './pages/Blog/blog'
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes";
 
-const App = () => {
+function App() {
   return (
-    <div>
-      {Home()}
-      {Blog()}
-    </div>
-  )
+    <>
+     
+        <RouterProvider router={router}/>
+     
+    </>
+  );
 }
 
-export default App
+export default App;
