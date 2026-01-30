@@ -7,7 +7,7 @@ import Home from "./pages/home";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <h1 style={{ color: "red" }}>ROUTER WORKS</h1>,
+    element: <Home/>,
   },{
     path:"/dashboard",
     element:<Routes/>,

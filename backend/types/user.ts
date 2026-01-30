@@ -1,7 +1,3 @@
-import prisma from '@prisma/client';
-
-const ROLE = prisma;
-
 export interface IRegister{
     email: string;
     password: string; 

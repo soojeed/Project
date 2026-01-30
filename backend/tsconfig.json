@@ -1,26 +1,19 @@
 {
   "compilerOptions": {
-    /* Language */
-    "target": "ES2023",
-     "skipLibCheck": true,
+    "target": "ES2020",
 
-    /* Module system (Node backend) */
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "CommonJS",
+    "moduleResolution": "node",
 
-    /* Project structure */
     "rootDir": "./",
     "outDir": "dist",
 
-    /* TypeScript rules */
     "strict": true,
     "skipLibCheck": true,
 
-    /* Node compatibility */
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "types": ["node"],
-    "lib": ["esnext"]
+    "types": ["node"]
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
