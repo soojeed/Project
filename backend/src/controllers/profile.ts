@@ -34,3 +34,56 @@ export const CreateProfile = async (req: Request, res: Response) =>{
         res.status(500).json({isSuccess:false, message:"Server Error!"})
     }
 }
+
+export const GetProfile = async (req: Request, res: Response) =>{
+    try{
+    const profile = await prisma.profile.findMany({
+        select :{
+            id : true,
+            fullName : true,
+            title : true,
+        }
+    });
+
+    res.status(200).json({isSuccess:true,message: "Profiles retrieved successfully", data: profile})
+    }catch(error){
+        res.status(500).json({isSuccess:false, message:"Server Error!"})
+    }
+       
+}
+
+export const updateProfile = async (req: Request, res: Response) =>{
+    try{
+        const data : IProfile = req.body;
+
+        const profile = await prisma.profile.update({
+            where : {
+                id : data.id
+            },
+            data : {
+                fullName : data.fullName,
+                title : data.title,
+            }
+        });
+        res.status(200).json({isSuccess:true, message:"Profile updated successfully", data: profile})
+    }catch(error){
+        res.status(500).json({isSuccess:false, message:"Server Error!"})
+    }
+}   
+
+
+export const deleteProfile = async (req: Request, res: Response) =>{
+    try{
+        const {id} = req.body;
+
+        const profile = await prisma.profile.delete({
+            where : {
+                id : id
+            }
+        });
+        res.status(200).json({isSuccess:true, message:"Profile deleted successfully", data: profile})
+    }catch(error){
+        res.status(500).json({isSuccess:false, message:"Server Error!"})
+    }
+
+}
