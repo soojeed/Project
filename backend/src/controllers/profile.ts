@@ -28,9 +28,10 @@ export const CreateProfile = async (req: Request, res: Response) =>{
         }
        });
 
-       res.status(404).json({isSucees:true, message : "Profile Created Succesfully", create})
+       res.status(200).json({isSuccess:true, message : "Profile Created Succesfully", create})
 
     }catch(error){
+        console.log(error);
         res.status(500).json({isSuccess:false, message:"Server Error!"})
     }
 }

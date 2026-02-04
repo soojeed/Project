@@ -54,7 +54,7 @@ model Profile {
 model Skill {
   id       Int    @id @default(autoincrement())
   name     String
-  level    SkillLevel 
+  level    SkillLevel
   image    String? 
   category SkillCategory   
 }
