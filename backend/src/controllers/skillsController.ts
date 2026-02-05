@@ -1,10 +1,10 @@
 import{ prisma }from '../lib/prisma'
 import {Response, Request} from 'express'
-import {Iskilss} from "../../types/skills"
+import {Iskills} from "../../types/skills"
 
 export const CreateSkils = async (req:Request, res:Response) =>{
     try{
-    const data : Iskilss =  req.body;
+    const data : Iskills =  req.body;
 
     const skills = await prisma.skill.findUnique({
         where :{
@@ -32,6 +32,7 @@ export const CreateSkils = async (req:Request, res:Response) =>{
 
 
     }catch(error){
+        console.log(req.body);
         console.log(error);
         res.status(500).json({isSuccess: false, message:'Server error', })
     }

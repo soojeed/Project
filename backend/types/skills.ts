@@ -1,6 +1,6 @@
 import { SkillCategory, SkillLevel } from "../generated/prisma/enums";
 
-export interface Iskilss  {
+export interface Iskills {
     id : number;
     name : string;
     level :SkillLevel;

@@ -1,10 +1,9 @@
-import Router from 'express'
-import { CreateProfile } from '../controllers/profile';
-import { GetSkills } from '../controllers/skillsController';
+import express from 'express'
+import {CreateSkils, GetSkills} from '../controllers/skillsController'
 
-const router = Router();
 
-router.post('/Create', CreateProfile);
+const router = express.Router();
+router.post('/Create', CreateSkils);
 router.get('/Get', GetSkills);
 
 export default router;
