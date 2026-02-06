@@ -5,12 +5,13 @@ import Home from "./pages/home";
 import Skills from "./pages/skills";
 import Experience from "./pages/Experience";
 import Projects from "./pages/projects";
+import HomePage from "./pages/home/home";
 
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>,
+    element: <HomePage/>,
   },{
     path:"/dashboard",
     element:<Routes/>,
