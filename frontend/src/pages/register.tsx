@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Navigate } from "react-router-dom";
 
 interface FormData {
   fullname: string;
@@ -26,6 +27,8 @@ const CreateUser = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    <Navigate to="/login" />;
+
     if (form.password != form.password_confirm) {
       alert("Passwords do not match");
       return;
@@ -42,7 +45,7 @@ const CreateUser = () => {
       const data = await res.json();
 
       if (!data.isSuccess) {
-        alert(data.message || "Error creating user");
+        alert(data.message || "All ready user exist");
         setLoading(false);
         return;
       }
@@ -55,6 +58,8 @@ const CreateUser = () => {
         password: "",
         password_confirm: "",
       });
+
+      
     } catch (error) {
       console.error("Error creating user:", error);
     } finally {
@@ -128,6 +133,7 @@ const CreateUser = () => {
           className="bg-blue-500 text-white px-4 py-2 rounded w-full hover:bg-blue-600 transition"
         >
           {loading ? "Creating..." : "Create User"}
+          {}
         </button>
       </form>
     </div>
