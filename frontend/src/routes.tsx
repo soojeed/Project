@@ -6,12 +6,21 @@ import Skills from "./pages/skills";
 import Experience from "./pages/Experience";
 import Projects from "./pages/projects";
 import HomePage from "./pages/home/home";
+import Register from "./pages/register"
+
+
 
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage/>,
+    children:[{
+      path:"register",
+      element:<Register/>
+    },
+    ]
+    
   },{
     path:"/dashboard",
     element:<Routes/>,
