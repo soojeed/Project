@@ -8,7 +8,7 @@ import Projects from "./pages/projects";
 import HomePage from "./pages/home/home";
 import Register from "./pages/register"
 import Section from "./components/Home/section";
-import Login from "./components/login";
+import Login from "./pages/login";
 
 
 
