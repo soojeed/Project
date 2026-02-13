@@ -38,6 +38,11 @@ const login = () => {
         return;
        }
 
+       alert("User Login Successfully!");
+        setForm({
+          email: "",
+          password: ""
+        });
     }
 catch (error) {
       console.error("Error creating user:", error);
@@ -48,7 +53,29 @@ catch (error) {
 
 
   return (
-    <div className="login bg-amber-600">login</div>
+    <div className="login-container flex items-center justify-center min-h-screen bg-gray-100">
+      <form onSubmit={handleSubmit}   className="w-full max-w-md bg-white rounded-2xl shadow-lg p-6 space-y-4">
+        
+        <input
+         
+          type="email"
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+          placeholder="Email"
+        />
+        <input
+          type="password"
+          name="password"
+          value={form.password}
+          onChange={handleChange}
+          placeholder="Password"
+        />
+        <button type="submit" disabled={loading}>
+          {loading ? "Logging in..." : "Login"}
+        </button>
+      </form>
+    </div>
   )
 }
 
